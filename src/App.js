@@ -1,5 +1,8 @@
 import './App.css';
-import Movies from './componentes/Movies.jsx';
+import Search from './componentes/search/Search';
+import AddMovie from './componentes/add-movie/AddMovie';
+import Movies from './componentes/movies/Movies.jsx';
+
 function App() {
   return (
     <div className="conteiner">
@@ -17,26 +20,8 @@ function App() {
         <div className="separator"></div>
         <main className="main">
             <section className="cont-up">
-                <div className="cont-search">
-                    <input type="text" id="search" placeholder="Search your favorite movie"/>
-                    <button id="button-search">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="3.6rem" height="3.6rem" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <circle cx="10" cy="10" r="7" />
-                            <line x1="21" y1="21" x2="15" y2="15" />
-                        </svg>
-                    </button>
-                </div>
-                <div className="cont-add">
-                    <button id="add">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-plus" width="3.6rem" height="3.6rem" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <line x1="12" y1="5" x2="12" y2="19" />
-                            <line x1="5" y1="12" x2="19" y2="12" />
-                        </svg>
-                        <span>Add Movie</span>
-                    </button>
-                </div>
+                <Search />
+                <AddMovie />
             </section>
             <section className="cont-movies">
                 <Movies/>

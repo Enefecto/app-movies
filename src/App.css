@@ -59,61 +59,6 @@
     padding: 0 1rem;
     background-color: var(--grayClaro);
 }
-.cont-search{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 80%;
-}
-#search{
-    height: 7rem;
-    width: 94%;
-    padding: 1rem;
-    border: 3px solid var(--gray);
-    border-radius: 1rem;
-    font-size: 2rem;
-}
-#search:focus{
-    animation:shake-horizontal 0.8s linear both;
-}
-#button-search{
-    height: 7rem;
-    width: 7rem;
-    border: 3px solid var(--gray);
-    border-radius: 1rem;
-    cursor: pointer;
-}
-#button-search:hover{
-    animation:rotate-center 0.6s;
-}
-.cont-add{
-    width: 20%;
-    display: flex;
-    justify-content: flex-end;
-}
-#add{
-    display: flex;
-    align-items: center;
-    height: 7rem;
-    border: 3px solid var(--gray);
-    border-radius: 2rem;
-    padding: 1rem;
-    cursor: pointer;
-    margin-right: 1rem;
-}
-#add span{
-    text-transform: uppercase;
-    text-align: center;
-}
-@media (max-width: 725px) {
-    #add span{
-        display: none;
-    }
-}
-#add:hover{
-    animation:jello-horizontal .9s linear both;
-}
-
 /* CONT-MOVIES */
 .cont-movies{
     width: 100%;

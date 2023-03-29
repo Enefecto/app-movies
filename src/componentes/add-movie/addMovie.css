@@ -1,0 +1,27 @@
+.cont-add{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+#add{
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    border: 3px solid var(--gray);
+    border-radius: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+#add span{
+    text-transform: uppercase;
+    text-align: center;
+}
+@media (max-width: 725px) {
+    #add span{
+        display: none;
+    }
+}
+#add:hover{
+    animation:jello-horizontal .9s linear both;
+}
