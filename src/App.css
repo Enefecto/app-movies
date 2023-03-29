@@ -1,38 +1,223 @@
-.App {
-  text-align: center;
+/* WEB PAGE */
+.conteiner{
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+}
+/* HEADER */
+.header{
+    width: 100%;
+    height: 13rem;
+    background-color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play{
+    width: 5rem;
+    height: 5rem;
+    background: linear-gradient(90deg, var(--azul) 10%, var(--azulClaro) 100%);
+    border-radius: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#tittle{
+    color: white;
+    margin-left: 1rem;
+    font-style: italic;
+    font-size: 5rem;
+    text-align: center;
+}
+.separator{
+    height: 3rem;
+    width: 100%;
+    background: linear-gradient(90deg, var(--azul) 10%, var(--azulClaro) 100%);
+}
+/* MAIN */
+.main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* CONT-UP */
+.cont-up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 13rem;
+    width: 100%;
+    padding: 0 1rem;
+    background-color: var(--grayClaro);
+}
+.cont-search{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+}
+#search{
+    height: 7rem;
+    width: 94%;
+    padding: 1rem;
+    border: 3px solid var(--gray);
+    border-radius: 1rem;
+    font-size: 2rem;
+}
+#search:focus{
+    animation:shake-horizontal 0.8s linear both;
+}
+#button-search{
+    height: 7rem;
+    width: 7rem;
+    border: 3px solid var(--gray);
+    border-radius: 1rem;
+    cursor: pointer;
+}
+#button-search:hover{
+    animation:rotate-center 0.6s;
+}
+.cont-add{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+#add{
+    display: flex;
+    align-items: center;
+    height: 7rem;
+    border: 3px solid var(--gray);
+    border-radius: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+#add span{
+    text-transform: uppercase;
+    text-align: center;
+}
+@media (max-width: 725px) {
+    #add span{
+        display: none;
+    }
+}
+#add:hover{
+    animation:jello-horizontal .9s linear both;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* CONT-MOVIES */
+.cont-movies{
+    width: 100%;
+    height: 100%;
+    background-color: var(--grayClaro);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movies{
+    width: 100%;
+    min-height: calc(100vh - 29rem);
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(30rem, 1fr));
+    padding: 2rem 2rem;
+    gap: 2rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (min-width: 120rem) {
+    .movies{
+        grid-template-columns: repeat(4,minmax(30rem, 1fr));
+    }
 }
-
-.App-link {
-  color: #61dafb;
+.card{
+    width: 100%;
+    min-height: 25rem;
+    max-height: 60rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0px 2rem 1.5rem 0px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
 }
+.card-tittle{
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+.card-description{
+    font-size: 1.3rem;
+    text-align: justify;
+    margin: 0 1rem;
+}
+.card-options{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.card-button{
+    width: 10rem;
+    height: 4rem;
+    background: var(--azulClaro);
+    color: white;
+    border: 2px solid var(--gray);
+    outline: 0;
+    padding: 1.3rem 0rem;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 300ms;
+    margin: 0 0.5rem;
+}
+.b-edit:hover{background-color: var(--verde);}
+.b-delete:hover{background-color: var(--rojo);}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ANIMATIONS */
+@keyframes rotate-center{
+    0%{
+        transform:rotate(0);
+    }
+    100%{
+        transform:rotate(360deg);
+    }
+}
+@keyframes jello-horizontal{
+    0%{
+        transform:scale3d(1,1,1);
+    }
+    30%{
+        transform:scale3d(1.25,.75,1);
+    }
+    40%{
+        transform:scale3d(.75,1.25,1);
+    }
+    50%{
+        transform:scale3d(1.15,.85,1);
+    }
+    65%{
+        transform:scale3d(.95,1.05,1);
+    }
+    75%{
+        transform:scale3d(1.05,.95,1);
+    }
+    100%{
+        transform:scale3d(1,1,1)
+    };
+}
+@keyframes shake-horizontal{
+    0%,100%{
+        transform:translateX(0);
+    }
+    10%,30%,50%,70%{
+        transform:translateX(-10px);
+    }
+    20%,40%,60%{
+        transform:translateX(10px);
+    }
+    80%{
+        transform:translateX(8px);
+    }
+    90%{
+        transform:translateX(-8px);
+    }
 }
