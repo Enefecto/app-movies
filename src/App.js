@@ -14,7 +14,7 @@ function App() {
                         <path d="M7 4v16l13 -8z" />
                     </svg>
                 </div>
-                <h1 id="tittle">Movies Time</h1>
+                <h1 id="title">Movies Time</h1>
             </div>
         </header>
         <div className="separator"></div>

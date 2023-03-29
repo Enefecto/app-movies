@@ -25,3 +25,61 @@
 #add:hover{
     animation:jello-horizontal .9s linear both;
 }
+/* FORM MOVIE */
+.opacity-form{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.form-movie{
+    height: 40rem;
+    min-width: 31rem;
+    width: 50rem;
+    background-color: white;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1rem solid var(--verde);
+    border-radius: 2rem;
+}
+#movieTitle, #movieDescription,#addMovie, #cancelAdded{
+    font-size: 2rem;
+    border: 2px solid var(--gray);
+    border-radius: 2rem;
+    padding: 2rem;
+}
+#movieTitle{
+    height: 6rem;
+    width: 90%;
+}
+#movieDescription{
+    height: 15rem;
+    width: 90%;
+}
+.buttons-movie{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+#addMovie, #cancelAdded{
+    height: 5rem;
+    width: 12rem;
+    padding: 0;
+    text-transform: uppercase;
+    color: white;
+    cursor: pointer;
+}
+#addMovie{
+    background-color: var(--verde);
+}
+#cancelAdded{
+    background-color: var(--rojo);
+}
