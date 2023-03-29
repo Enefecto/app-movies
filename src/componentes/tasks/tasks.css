@@ -64,3 +64,18 @@
 }
 .b-edit:hover{background-color: var(--verde);}
 .b-delete:hover{background-color: var(--rojo);}
+
+/* NO-TASKS */
+#no-tasks{
+    position: absolute;
+    left: 0rem;
+    height: 60%;
+    width: 100vw;
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}

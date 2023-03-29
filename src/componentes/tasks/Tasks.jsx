@@ -1,18 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './tasks.css';
-const Movies = () => {
-  return (
+const Movies = ({tasksList, tasksListSet}) => {
+
+
+    useEffect(() => {
+        getTasks();
+    }, [])
+
+    const getTasks = () => {
+        let tasks = JSON.parse(localStorage.getItem('task'));
+        tasksListSet(tasks);
+    }
+
+    return (
     <ul className="tasks">
-        <li className="card">
-            <h3 className="card-tittle">El Gato Con Botas</h3>
-            <p className="card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo alias ab numquam tempora aliquam, at fugiat sequi magnam architecto perferendis harum? Autem similique corporis ipsa ipsum, enim porro velit sapiente.</p>
-            <div className="card-options">
-                <button className="card-button b-edit">Edit</button>
-                <button className="card-button b-delete">Delete</button>
-            </div>
-        </li>
+        {
+        tasksList ? tasksList.map(task => {
+            return (
+                <li key={task.id} className="card">
+                    <h3 className="card-tittle">{task.title}</h3>
+                    <p className="card-description">{task.description}</p>
+                    <div className="card-options">
+                        <button className="card-button b-edit">Edit</button>
+                        <button className="card-button b-delete">Delete</button>
+                    </div>
+                </li>
+            );
+            })
+        : <h2 id='no-tasks'>There are no tasks, ¡¡ADD ONE!!</h2>
+        }
     </ul>
-  )
+    )
 }
 
 export default Movies;

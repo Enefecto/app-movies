@@ -1,10 +1,14 @@
 import './App.css';
 import Search from './componentes/search/Search';
-import AddMovie from './componentes/add-task/AddTask';
-import Movies from './componentes/tasks/Tasks.jsx';
+import AddTask from './componentes/add-task/AddTask';
+import Tasks from './componentes/tasks/Tasks.jsx';
+import { useState } from 'react';
 
 function App() {
-  return (
+
+    const [tasksList, tasksListSet] = useState([]);
+
+    return (
     <div className="conteiner">
         <header className="header">
             <div className='cont-header'>
@@ -14,17 +18,17 @@ function App() {
                         <path d="M7 4v16l13 -8z" />
                     </svg>
                 </div>
-                <h1 id="title">Movies Time</h1>
+                <h1 id="title">Tasks Time</h1>
             </div>
         </header>
         <div className="separator"></div>
         <main className="main">
             <section className="cont-up">
                 <Search />
-                <AddMovie />
+                <AddTask tasksListSet={tasksListSet} />
             </section>
             <section className="cont-tasks">
-                <Movies/>
+                <Tasks tasksList={tasksList} tasksListSet={tasksListSet}/>
             </section>
         </main>
         <footer className="footer"></footer>
