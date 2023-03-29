@@ -3,7 +3,7 @@ import './search.css';
 const Search = () => {
   return (
     <div className="cont-search">
-        <input type="text" id="search" placeholder="Search your favorite movie"/>
+        <input type="text" id="search" placeholder="Search your favorite task"/>
         <button id="button-search">
             <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width="3.6rem" height="3.6rem" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#000000" fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

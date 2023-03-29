@@ -1,7 +1,7 @@
 import './App.css';
 import Search from './componentes/search/Search';
-import AddMovie from './componentes/add-movie/AddMovie';
-import Movies from './componentes/movies/Movies.jsx';
+import AddMovie from './componentes/add-task/AddTask';
+import Movies from './componentes/tasks/Tasks.jsx';
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
                 <Search />
                 <AddMovie />
             </section>
-            <section className="cont-movies">
+            <section className="cont-tasks">
                 <Movies/>
             </section>
         </main>

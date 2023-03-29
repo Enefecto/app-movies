@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './addMovie.css';
-const AddMovie = () => {
+import './addTask.css';
+const Addtask = () => {
 
 	const [formActive, formActiveSet] = useState(false);
 
@@ -10,6 +10,16 @@ const AddMovie = () => {
 	const removeForm = () => {
 		formActiveSet(false);
 	}
+
+	const getData = (e) => {
+		e.preventDefault();
+		const target = e.target;
+		let title = target.taskTitle.value;
+		let description = target.taskDescription.value;
+
+		
+	}
+
 	if (!formActive){
 		return (
 			<div className="cont-add">
@@ -19,24 +29,24 @@ const AddMovie = () => {
 						<line x1="12" y1="5" x2="12" y2="19" />
 						<line x1="5" y1="12" x2="19" y2="12" />
 					</svg>
-					<span>Add Movie</span>
+					<span>Add Task</span>
 				</button>
 			</div>
 		)
 	} else {
 		return (
 			<div className="opacity-form">
-				<form className='form-movie' onSubmit={() => {}}>
+				<form className='form-task' onSubmit={getData}>
 					<input 	type="text"
-							id='movieTitle'
-							name='movieTitle' 
+							id='taskTitle'
+							name='taskTitle' 
 							placeholder='Title'/>
-					<textarea 	id='movieDescription'
-								name='movieDescription'
+					<textarea 	id='taskDescription'
+								name='taskDescription'
 								placeholder='Description...'>
 					</textarea>
-					<div className="buttons-movie">
-						<input type="submit" id='addMovie' value='Confirm' />
+					<div className="buttons-task">
+						<input type="submit" id='addTask' value='Confirm' />
 						<button id='cancelAdded' onClick={removeForm}>Cancel</button>
 					</div>
 				</form>
@@ -45,4 +55,4 @@ const AddMovie = () => {
 	}
 }
 
-export default AddMovie;
+export default Addtask;

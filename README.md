@@ -1,1 +1,1 @@
-# Aplicacion de peliculas creada con react
+# Aplicacion de tareas creada con react

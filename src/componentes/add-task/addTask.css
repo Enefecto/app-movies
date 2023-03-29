@@ -36,7 +36,7 @@
     justify-content: center;
     align-items: center;    
 }
-.form-movie{
+.form-task{
     height: 40rem;
     min-width: 31rem;
     width: 50rem;
@@ -49,27 +49,27 @@
     border: 1rem solid var(--verde);
     border-radius: 2rem;
 }
-#movieTitle, #movieDescription,#addMovie, #cancelAdded{
+#taskTitle, #taskDescription,#addTask, #cancelAdded{
     font-size: 2rem;
     border: 2px solid var(--gray);
     border-radius: 2rem;
     padding: 2rem;
 }
-#movieTitle{
+#taskTitle{
     height: 6rem;
     width: 90%;
 }
-#movieDescription{
+#taskDescription{
     height: 15rem;
     width: 90%;
 }
-.buttons-movie{
+.buttons-task{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 90%;
 }
-#addMovie, #cancelAdded{
+#addTask, #cancelAdded{
     height: 5rem;
     width: 12rem;
     padding: 0;
@@ -77,7 +77,7 @@
     color: white;
     cursor: pointer;
 }
-#addMovie{
+#addTask{
     background-color: var(--verde);
 }
 #cancelAdded{
