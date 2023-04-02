@@ -54,10 +54,12 @@ const Addtask = ({setTasksList}) => {
 				<input 	type="text"
 						id='taskTitle'
 						name='taskTitle' 
-						placeholder='Title'/>
+						placeholder='Title'
+						autoComplete='off'/>
 				<textarea 	id='taskDescription'
 							name='taskDescription'
-							placeholder='Description...'>
+							placeholder='Description...'
+							autoComplete='off'>
 				</textarea>
 				<div className="buttons-task">
 					<input type="submit" id='addTask' value='Confirm' />
