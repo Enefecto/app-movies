@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import './tasks.css';
 const Movies = ({tasksList, setTasksList,setDisplayEdit,setIdEdit}) => {
 
