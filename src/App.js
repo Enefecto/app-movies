@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 function App() {
 
-    const [tasksList, tasksListSet] = useState([]);
+    const [tasksList, setTasksList] = useState([]);
 
     return (
     <div className="conteiner">
@@ -25,10 +25,10 @@ function App() {
         <main className="main">
             <section className="cont-up">
                 <Search />
-                <AddTask tasksListSet={tasksListSet} />
+                <AddTask setTasksList={setTasksList} />
             </section>
             <section className="cont-tasks">
-                <Tasks tasksList={tasksList} tasksListSet={tasksListSet}/>
+                <Tasks tasksList={tasksList} setTasksList={setTasksList}/>
             </section>
         </main>
         <footer className="footer"></footer>

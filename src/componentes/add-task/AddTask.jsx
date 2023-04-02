@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SaveStorage } from '../helper/SaveStorage';
 import './addTask.css';
-const Addtask = ({tasksListSet}) => {
+const Addtask = ({setTasksList}) => {
 
 	const [formActive, formActiveSet] = useState(false);
 
@@ -23,7 +23,7 @@ const Addtask = ({tasksListSet}) => {
 		// Save in localStorage
 		SaveStorage('task',tempTask);
 
-		tasksListSet(tasks => {
+		setTasksList(tasks => {
 			if (tasks){
 				return [tempTask, ...tasks]
 			} else {
