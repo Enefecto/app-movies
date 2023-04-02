@@ -24,8 +24,11 @@ const Addtask = ({tasksListSet}) => {
 		SaveStorage('task',tempTask);
 
 		tasksListSet(tasks => {
-			return [tempTask, ...tasks]
-			
+			if (tasks){
+				return [tempTask, ...tasks]
+			} else {
+				return [tempTask];
+			}
 		});
 
 		formActiveSet(false);
@@ -57,7 +60,7 @@ const Addtask = ({tasksListSet}) => {
 							placeholder='Description...'>
 				</textarea>
 				<div className="buttons-task">
-					<input onChange={getData} type="submit" id='addTask' value='Confirm' />
+					<input type="submit" id='addTask' value='Confirm' />
 					<button id='cancelAdded' onClick={removeForm}>Cancel</button>
 				</div>
 			</form>
