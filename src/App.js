@@ -27,7 +27,9 @@ function App() {
         <div className="separator"></div>
         <main className="main">
             <section className="cont-up">
-                <Search />
+                <Search 
+                    tasksList={tasksList}
+                    setTasksList={setTasksList}/>
                 <ButtonAddTask 
                     setDisplayAdd={setDisplayAdd}
                 />

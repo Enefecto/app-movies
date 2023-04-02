@@ -24,7 +24,7 @@ const EditTask = ({setDisplayEdit,idEdit,tasksList,setTasksList}) => {
     const getData = (e) => {
 		e.preventDefault();
 		let editedTask = {
-			id: idEdit,
+			id: new Date().getTime(),
 			title: e.target.taskTitle.value,
 			description: e.target.taskDescription.value
 		};
