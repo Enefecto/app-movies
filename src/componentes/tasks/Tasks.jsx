@@ -27,7 +27,7 @@ const Movies = ({tasksList, setTasksList,setDisplayEdit,setIdEdit}) => {
     return (
     <ul className="tasks">
         {
-        tasksList.length != 0 ? tasksList.map(task => {
+        tasksList.length !== 0 ? tasksList.map(task => {
             return (
                 <li key={task.id} className="card">
                     <h3 className="card-tittle">{task.title}</h3>
