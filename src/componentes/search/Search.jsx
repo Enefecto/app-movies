@@ -4,21 +4,22 @@ const Search = ({tasksList, setTasksList}) => {
     
     const [hunt, setHunt] = useState('');
 
-    
+
     const taskFinder = (e) => {
-        
-        setHunt(e.target.value);
-        console.log(hunt);
-
-        let match = tasksList.filter(task => {
-            return task.title.toLowerCase().includes(hunt.toLowerCase());
-        })
-
-        if (hunt.length <= 1 || match.length <= 0){
-            match = JSON.parse(localStorage.getItem('task'));
+        if (tasksList){
+            setHunt(e.target.value || hunt);
+            console.log(hunt);
+    
+            let match = tasksList.filter(task => {
+                return task.title.toLowerCase().includes(hunt.toLowerCase());
+            })
+    
+            if (hunt.length <= 1 || match.length <= 0){
+                match = JSON.parse(localStorage.getItem('task'));
+            }
+    
+            setTasksList(match);
         }
-
-        setTasksList(match);
     }
     
     return (
@@ -30,8 +31,6 @@ const Search = ({tasksList, setTasksList}) => {
                 autoComplete='off'
                 onKeyUpCapture={taskFinder}
                 onChange={taskFinder}
-                
-                
 
         />
         <button id="button-search" onClick={taskFinder}>
