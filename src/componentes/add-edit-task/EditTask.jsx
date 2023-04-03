@@ -13,7 +13,7 @@ const EditTask = ({setDisplayEdit,idEdit,tasksList,setTasksList}) => {
 
     useEffect(() => {
         tasksList.map(task => {
-            if (task.id == idEdit){
+            if (task.id === idEdit){
                 setTitle(task.title);
                 setDescription(task.description);
             }
