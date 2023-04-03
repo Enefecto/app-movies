@@ -24,6 +24,8 @@ const Movies = ({tasksList, setTasksList,setDisplayEdit,setIdEdit}) => {
     return (
     <ul className="tasks">
         {
+        tasksList === null ? <h2 id='no-tasks'>There are no tasks, ¡¡ADD ONE!!</h2>
+        :
         tasksList.length !== 0 ? tasksList.map(task => {
             return (
                 <li key={task.id} className="card">
@@ -36,6 +38,7 @@ const Movies = ({tasksList, setTasksList,setDisplayEdit,setIdEdit}) => {
                 </li>
             );
             })
+        
         : <h2 id='no-tasks'>There are no tasks, ¡¡ADD ONE!!</h2>
         }
     </ul>
