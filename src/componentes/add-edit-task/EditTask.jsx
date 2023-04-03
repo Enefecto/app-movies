@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import './add-edit-Task.css';
 const EditTask = ({setDisplayEdit,idEdit,tasksList,setTasksList}) => {
     
@@ -11,17 +11,7 @@ const EditTask = ({setDisplayEdit,idEdit,tasksList,setTasksList}) => {
 		setDisplayEdit(false);
 	}
 
-    useEffect(() => {
-        tasksList.map(task => {
-            if (task.id === idEdit){
-                setTitle(task.title);
-                setDescription(task.description);
-            }
-        });
-        setIndex(tasksList.findIndex(task => task.id === idEdit))
-    }, []);
-    
-    const getData = (e) => {
+    const getData = useCallback((e) => {
 		e.preventDefault();
 		let editedTask = {
 			id: new Date().getTime(),
@@ -38,7 +28,22 @@ const EditTask = ({setDisplayEdit,idEdit,tasksList,setTasksList}) => {
         localStorage.setItem('task',JSON.stringify(storage));
 
         setDisplayEdit(false);
-	}
+	}, [index,setDisplayEdit,setTasksList,tasksList]);
+
+    useEffect(() => {
+
+        tasksList.forEach(task => {
+            if (task.id === idEdit){
+                setTitle(task.title);
+                setDescription(task.description);
+            }
+        });
+
+        setIndex(tasksList.findIndex(task => task.id === idEdit));
+
+    },[idEdit,tasksList,getData]);
+    
+
 
     return (
     <div className="opacity-form">

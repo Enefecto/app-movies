@@ -4,18 +4,15 @@ const Movies = ({tasksList, setTasksList,setDisplayEdit,setIdEdit}) => {
 
 
     useEffect(() => {
-        getTasks();
-    }, [])
+        let tasks = JSON.parse(localStorage.getItem('task'));
+        setTasksList(tasks);
+    }, [setTasksList])
 
     const displayForm = (id) => {
         setIdEdit(id);
         setDisplayEdit(true);
     }
 
-    const getTasks = () => {
-        let tasks = JSON.parse(localStorage.getItem('task'));
-        setTasksList(tasks);
-    }
 
     const deleteTask = (id) => {
         let tasks = JSON.parse(localStorage.getItem('task'));
